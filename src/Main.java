@@ -30,7 +30,7 @@ public class Main {
         for (Employee employee : arr){
             sum = sum + employee.getSalary();
         }
-        System.out.println("Ñóììà çàòðàò íà çàðïëàòû â ìåñÿö: " + sum + "\n" );
+        System.out.println("Затраты на зарплаты: " + sum + "\n" );
         return sum;
     }
 
@@ -41,7 +41,7 @@ public class Main {
                 minSalary = employee.getSalary();
             }
         }
-        System.out.println("Ìèíèìàëüíàÿ çàðïëàòà: " + minSalary + "\n");
+        System.out.println("Минимальная зарплата: " + minSalary + "\n");
     }
 
     public static void searchMaxSalary(Employee[] arr){
@@ -51,11 +51,11 @@ public class Main {
                 maxSalary = employee.getSalary();
             }
         }
-        System.out.println("Ìàêñèìàëüíàÿ çàðïëàòà: " + maxSalary + "\n");
+        System.out.println("Максимальная зарплата: " + maxSalary + "\n");
     }
 
     public static void searchAverageSalary(Employee[] arr){
-        System.out.println("Ñðåäíÿÿ çàðïëàòà:" + searchSalaryCosts(arr)/arr.length + "\n");
+        System.out.println("Средняя зарплата:" + searchSalaryCosts(arr)/arr.length + "\n");
     }
 
     public static void getAllFullNames(Employee[] arr){

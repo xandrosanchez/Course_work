@@ -1,5 +1,3 @@
-import org.w3c.dom.css.Counter;
-
 public class Employee {
 
     private String fullName;
@@ -51,7 +49,7 @@ public class Employee {
 
     @Override
     public String toString(){
-        return "Личный номер:" + id + "\nФИО:" + fullName + "\nОтдел:" + department + "\nЗарплата:" + salary + "\n";
+        return "Р›РёС‡РЅС‹Р№ РЅРѕРјРµСЂ:" + id + "\nР¤РРћ:" + fullName + "\nРћС‚РґРµР»:" + department + "\nР—Р°СЂРїР»Р°С‚Р°:" + salary + "\n";
     }
 
 }
