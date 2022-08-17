@@ -1,22 +1,28 @@
+import org.w3c.dom.css.Counter;
+
 public class Employee {
 
-    private String full_name;
+    private String fullName;
 
     private int department;
 
     private double salary;
 
-    public static int id = 0;
+    public static int counter;
+
+    private int id;
 
     public Employee(String full_name,int department, double salary){
-        this.full_name = full_name;
+        this.fullName = full_name;
         this.department = department;
         this.salary = salary;
-        id++;
+        id = Employee.getCounter();
+        counter++;
     }
 
-    public String getFull_name() {
-        return full_name;
+
+    public String getFullName() {
+        return fullName;
     }
 
     public int getDepartment() {
@@ -27,7 +33,11 @@ public class Employee {
         return salary;
     }
 
-    public static int getId() {
+    public static int getCounter() {
+        return counter;
+    }
+
+    public int getId() {
         return id;
     }
 
@@ -39,13 +49,9 @@ public class Employee {
         this.salary = salary;
     }
 
+    @Override
     public String toString(){
-        return id + "\n" + full_name + "\n" + department + "\n" + salary + "\n";
+        return "Личный номер:" + id + "\nФИО:" + fullName + "\nОтдел:" + department + "\nЗарплата:" + salary + "\n";
     }
 
-    public static void toStringAll(Employee[] arr){
-        for (Employee employee : arr) {
-            System.out.println(employee);
-        }
-    }
 }
