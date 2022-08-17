@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Employee john1 = new Employee("Плотко Элина Андреевна",1,110500);
-        Employee john2 = new Employee("Данилюк Мирослав Викторович",3,74000);
-        Employee john3 = new Employee("Евтеев Георгий Александрович",4,45000);
-        Employee john4 = new Employee("Баклушин Александр Алексеевич",1,170000);
-        Employee john5 = new Employee("Исаева Мариам Рашидовна",4,163000);
-        Employee john6 = new Employee("Исаева Карина Рашидовна",4,178000);
-        Employee john7 = new Employee("Егоров Павел Витальевич",1,174500);
-        Employee john8 = new Employee("Иванов Артем Сергеевич",5,83450);
-        Employee john9 = new Employee("Попова Алена Витальевна",5,64300);
-        Employee john10 = new Employee("Макгрегор Конор Хабибович",2,230000);
+        Employee john1 = new Employee("РњРµР»СЊРЅРёРєРѕРІР° РљСЃРµРЅРёСЏ Р’РёС‚Р°Р»СЊРµРІРЅР°",1,110500);
+        Employee john2 = new Employee("РРІР°РЅРѕРІР° РЎРѕС„РёСЏ РРІР°РЅРѕРІРЅР°",3,74000);
+        Employee john3 = new Employee("Р‘СѓСЂР°РєС€Р°РµРІР° Р®Р»РёСЏ РЎРµСЂРіРµРµРІРЅР°",4,45000);
+        Employee john4 = new Employee("Р¤СѓСЂСЃРѕРІР° Р•Р»РёР·Р°РІРµС‚Р° Р’Р»Р°РґРёРјРёСЂРѕРІРЅР°",1,170000);
+        Employee john5 = new Employee("РЎР°РїСЃР°Р№ РРІР°РЅ РђР»РµРєСЃРµРµРІРёС‡",4,163000);
+        Employee john6 = new Employee("Р‘РѕРіРѕСЃР»РѕРІСЃРєРёР№ РђСЂС‚РµРј РњРёС…Р°Р№Р»РѕРІРёС‡",4,178000);
+        Employee john7 = new Employee("РЎР°РјР±РёРєРёРЅР° Р®Р»РёСЏ Р’Р»Р°РґРёРјРёСЂРѕРІРЅР°",1,174500);
+        Employee john8 = new Employee("РЁРїР°Рє РђРЅРіРµР»РёРЅР° Р­РґСѓР°СЂРґРѕРІРЅР°",5,83450);
+        Employee john9 = new Employee("РџРёРјРµРЅРѕРІ РњР°РєСЃРёРј Р•РІРіРµРЅСЊРµРІРёС‡",5,64300);
+        Employee john10 = new Employee("РЎРёРіРёРґР° Р’Р°Р»РµСЂРёСЏ Р РѕРјР°РЅРѕРІРЅР°",2,230000);
         Employee[] arr = new Employee[] {john1,john2,john3,john4,john5,john6,john7,john8,john9,john10};
         toStringAll(arr);
         searchSalaryCosts(arr);
@@ -30,7 +30,7 @@ public class Main {
         for (Employee employee : arr){
             sum = sum + employee.getSalary();
         }
-        System.out.println("Сумма затрат на зарплаты в месяц: " + sum + "\n" );
+        System.out.println("Г‘ГіГ¬Г¬Г  Г§Г ГІГ°Г ГІ Г­Г  Г§Г Г°ГЇГ«Г ГІГ» Гў Г¬ГҐГ±ГїГ¶: " + sum + "\n" );
         return sum;
     }
 
@@ -41,7 +41,7 @@ public class Main {
                 minSalary = employee.getSalary();
             }
         }
-        System.out.println("Минимальная зарплата: " + minSalary + "\n");
+        System.out.println("ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г Гї Г§Г Г°ГЇГ«Г ГІГ : " + minSalary + "\n");
     }
 
     public static void searchMaxSalary(Employee[] arr){
@@ -51,11 +51,11 @@ public class Main {
                 maxSalary = employee.getSalary();
             }
         }
-        System.out.println("Максимальная зарплата: " + maxSalary + "\n");
+        System.out.println("ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г Гї Г§Г Г°ГЇГ«Г ГІГ : " + maxSalary + "\n");
     }
 
     public static void searchAverageSalary(Employee[] arr){
-        System.out.println("Средняя зарплата:" + searchSalaryCosts(arr)/arr.length + "\n");
+        System.out.println("Г‘Г°ГҐГ¤Г­ГїГї Г§Г Г°ГЇГ«Г ГІГ :" + searchSalaryCosts(arr)/arr.length + "\n");
     }
 
     public static void getAllFullNames(Employee[] arr){
