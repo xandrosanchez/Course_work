@@ -30,7 +30,7 @@ public class Main {
         for (Employee employee : arr){
             sum = sum + employee.getSalary();
         }
-        System.out.println("—умма затрат на зарплаты в мес€ц: " + sum + "\n");
+        System.out.println("—умма затрат на зарплаты в мес€ц: " + sum + "\n" );
         return sum;
     }
 
