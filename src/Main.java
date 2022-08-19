@@ -11,12 +11,20 @@ public class Main {
         Employee john9 = new Employee("Пименов Максим Евгеньевич",5,64300);
         Employee john10 = new Employee("Сигида Валерия Романовна",2,230000);
         Employee[] arr = new Employee[] {john1,john2,john3,john4,john5,john6,john7,john8,john9,john10};
-        toStringAll(arr);
-        searchSalaryCosts(arr);
-        searchMinSalary(arr);
-        searchMaxSalary(arr);
-        searchAverageSalary(arr);
-        getAllFullNames(arr);
+//        toStringAll(arr);
+//        searchSalaryCosts(arr);
+//        searchMinSalary(arr);
+//        searchMaxSalary(arr);
+//        searchAverageSalary(arr);
+//        getAllFullNames(arr);
+        indexingSalary(arr,5);
+        System.out.println(searchMinSalary(4, arr));
+        System.out.println(searchSalaryCosts(1, arr));
+        System.out.println(searchAverageSalary(1,arr));
+        indexingSalary(arr,100,1);
+        System.out.println(searchSalaryCosts(1, arr));
+        printEmployees(arr,5);
+        printEmployeesWithLowerSalaries(arr, 100000);
     }
 
     public static void toStringAll(Employee[] arr){
@@ -63,4 +71,111 @@ public class Main {
             System.out.println(employee.getFullName());
         }
     }
+
+    public static void indexingSalary(Employee[] arr,double percent){
+        for (Employee employee : arr){
+            employee.setSalary(employee.getSalary() * (1 + percent/100));
+        }
+    }
+
+    public static Employee searchMinSalary(int department,Employee[] arr){
+        double salary = 0;
+        int ID = 0;
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                salary = employee.getSalary();
+            }
+        }
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                if (employee.getSalary() < salary){
+                    salary = employee.getSalary();
+                    ID = employee.getId();
+                }
+            }
+        }
+        return arr[ID];
+    }
+
+    public static Employee searchMaxSalary(int department,Employee[] arr){
+        double salary = 0;
+        int ID = 0;
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                salary = employee.getSalary();
+            }
+        }
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                if (employee.getSalary() > salary){
+                    salary = employee.getSalary();
+                    ID = employee.getId();
+                }
+            }
+        }
+        return arr[ID];
+    }
+
+    public static double searchSalaryCosts(int department,Employee[] arr){
+        double sum = 0;
+        for (Employee employee :arr){
+            if (employee.getDepartment() == department){
+                sum = sum + employee.getSalary();
+            }
+        }
+        return sum;
+    }
+
+    public static double searchAverageSalary(int department,Employee[] arr){
+        int amount = 0;
+        for (Employee employee :arr){
+            if (employee.getDepartment() == department){
+                amount++;
+            }
+        }
+        return searchSalaryCosts(department,arr)/amount; //как я могу здесь сделать только 2 знака после запятой?
+    }
+
+    public static void indexingSalary(Employee[] arr,double percent,int department){
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                employee.setSalary(employee.getSalary() * (1 + percent/100));
+            }
+        }
+    }
+
+    public static void printEmployees(Employee[] arr,int department){
+        for (Employee employee : arr){
+            if (employee.getDepartment() == department){
+                System.out.println(employee.getId());
+                System.out.println(employee.getFullName());
+                System.out.println(employee.getSalary());
+                System.out.println();
+            }
+        }
+    }
+
+    public static void printEmployeesWithLowerSalaries(Employee[] arr, double salary){
+        for (Employee employee : arr){
+            if (employee.getSalary() < salary){
+                System.out.println(employee);
+                System.out.println();
+            }
+        }
+    }
+
+    public static void printEmployeesWithHigherSalaries(Employee[] arr, double salary){
+        for (Employee employee : arr){
+            if (employee.getSalary() >= salary){
+                System.out.println(employee);
+                System.out.println();
+            }
+        }
+    }
+
+
+
+
+
+
 }
